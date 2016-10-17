@@ -2,19 +2,17 @@ package org.template.classification
 
 import org.apache.predictionio.controller.PDataSource
 import org.apache.predictionio.controller.EmptyEvaluationInfo
-import org.apache.predictionio.controller.Params
 import org.apache.predictionio.data.store.PEventStore
-
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
-
 import grizzled.slf4j.Logger
+import org.apache.predictionio.controller.Params
 
 case class DataSourceParams(
   appName: String,
-  evalK: Option[Int]  // define the k-fold parameter.
+  evalK: Option[Int] 
 ) extends Params
 
 class DataSource(val dsp: DataSourceParams)
