@@ -24,7 +24,7 @@ class Algorithm(val ap: SVMModeling)extends P2LAlgorithm[PreparedData, SVMModel,
   @transient lazy val logger = Logger[this.type]
 
   def train(sc: SparkContext, data: PreparedData): SVMModel = {
-    // MLLib NaiveBayes cannot handle empty training data.
+
     require(data.labeledPoints.take(1).nonEmpty,
       s"RDD[labeledPoints] in PreparedData cannot be empty." +
       " Please check if DataSource generates TrainingData" +
